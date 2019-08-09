@@ -1,32 +1,97 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+//
+// require('./bootstrap');
+//
+// window.Vue = require('vue');
+//
+// window.VueRouter = require('vue-router').default;
+//
+// window.VueAxios = require('vue-axios').default;
+//
+// window.Axios = require('axios').default;
+//
+// let AppLayout = require('./components/App.vue');
+//
+// const Home = Vue.component('Home', require('./components/home.vue'));
+//
+// const Allposts = Vue.component('AllPosts', require('./components/AllPosts.vue'));
+// const Createpost = Vue.component('CreatePost', require('./components/CreatePost.vue'));
+// const Editpost = Vue.component('EditPost', require('./components/EditPost.vue'));
+// const Viewpost = Vue.component('ViewPost', require('./components/ViewPost.vue'));
+// // const Deletepost = Vue.component('DeletePost', require('./components/DeletePost.vue'));
+//
+// //register Modules
+// Vue.use(VueRouter, VueAxios, axios);
+//
+// const routes = [
+//     {
+//         name: 'Home',
+//         path: '/',
+//         component: Home
+//     },
+//     {
+//         name: 'AllPosts',
+//         path: '/all',
+//         component: Allposts
+//     },
+//     {
+//         name: 'CreatePost',
+//         path: '/create-post',
+//         component: Createpost
+//     },
+//     {
+//         name: 'EditPost',
+//         path: '/edit/:id',
+//         component: Editpost
+//     },
+//     {
+//         name: 'ViewPost',
+//         path: '/view-post/:id',
+//         component: Viewpost
+//     },
+//     // {
+//     //     name: 'DeletePost',
+//     //     path: '/delete/:id',
+//     //     component: Deletepost
+//     // }
+// ]
+//
+//
+// const router = new VueRouter({ mode: 'history', routes: routes});
+//
+// new Vue(
+//     Vue.util.extend(
+//         { router },
+//         AppLayout
+//     )
+// ).$mount('#app');
 
-require('./bootstrap');
+// window.axios = require("axios");
+//
+// import Vue from "vue";
+// import router from "./router";
+//
+// const app = new Vue({
+//     el: "#app",
+//     router,
+//     render: h => h(App)
+// });
+//
+// export default app;
 
-window.Vue = require('vue');
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+import Vue from 'vue'
+import VueRouter from 'vue-router';
 
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+import { routes } from './routes';
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.use(VueRouter);
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+const router = new VueRouter({
+    mode: 'history',
+    routes
+});
 
-const app = new Vue({
+new Vue({
     el: '#app',
+    router
 });
