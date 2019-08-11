@@ -21,7 +21,7 @@ Route::get('posts', 'PostController@index');
 
 Route::get('post/{id}', 'PostController@show');
 
-Route::post('post', 'PostController@store');
+Route::post('post', 'PostController@storePost');
 
 Route::put('post', 'PostController@store');
 
